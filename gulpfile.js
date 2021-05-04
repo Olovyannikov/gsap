@@ -36,7 +36,7 @@ let path = {
 //Объявляем переменные
 let { src, dest } = require("gulp"),
     gulp = require("gulp"),
-    smartGrid = require("smart-grid"),
+    //smartGrid = require("smart-grid"),
     browsersync = require("browser-sync").create(), //Инициализация локального сервера
     fileinclude = require("gulp-file-include"), // Для подключения файлов друг в друга
     del = require("del"), //Удаление папки build
@@ -234,19 +234,19 @@ function watchFiles() {
     gulp.watch([path.watch.css], { usePolling: true }, css);
     gulp.watch([path.watch.js], js);
     gulp.watch([path.watch.img], images);
-    gulp.watch('./smartgrid.js', grid);
+    //gulp.watch('./smartgrid.js', grid);
 }
 
 function clean() {
     return del(path.clean);
 }
-
-function grid(callback) {
-    delete require.cache[require.resolve('./smartgrid.js')];
-    let settings = require('./smartgrid.js');
-    smartGrid(source_folder + '/scss/vendor', settings);
-    callback();
-}
+//
+// function grid(callback) {
+//     delete require.cache[require.resolve('./smartgrid.js')];
+//     let settings = require('./smartgrid.js');
+//     smartGrid(source_folder + '/scss/vendor', settings);
+//     callback();
+// }
 
 let build = gulp.series(
     clean, images, svgsprite, pug2html,
@@ -254,7 +254,7 @@ let build = gulp.series(
 );
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
-exports.grid = grid;
+//exports.grid = grid;
 exports.pug2html = pug2html;
 exports.fonts = fonts;
 exports.svgsprite = svgsprite;
