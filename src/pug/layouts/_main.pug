@@ -1,7 +1,7 @@
 block variables
 
 <!DOCTYPE html>
-html(lang="ru")
+html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -10,10 +10,14 @@ html(lang="ru")
         title #{title}
 
     body
-        //include ./../../../build/img/icons/icons.svg
+        include ./../../../build/img/icons/icons.svg
         //-include ./../mixins/_debug
-        //-include ../sections/components/header/_header.pug
-        main.main
-            block content
-        //-include ../sections/components/footer/_footer.pug
+        include ./../components/_mouse
+        include ./../components/_preloader
+        input(type='hidden' value='1')#helper-input
+        .site-container
+            include ../sections/header/_header.pug
+            main.main
+                block content
+            //-include ../sections/components/footer/_footer.pug
         script(src="js/script.min.js")
