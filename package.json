@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "bezier": "^0.1.0",
+    "bezier-easing": "^2.1.0",
     "bezier-js": "^4.1.1",
     "gsap": "^3.6.1",
     "swiped-events": "^1.1.4"
