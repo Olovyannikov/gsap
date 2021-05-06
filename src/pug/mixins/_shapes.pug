@@ -1,0 +1,7 @@
+mixin shapes(isCurrent, color, isNext)
+    -activeShape = isCurrent === true ? 'shapes__item_current' : ''
+    -nextSlide = isNext === true ? 'index' : ''
+
+    .shapes__item(class=activeShape class=nextSlide)
+        .shapes__content(data-bg=color)
+

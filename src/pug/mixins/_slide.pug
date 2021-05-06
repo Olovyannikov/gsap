@@ -1,0 +1,12 @@
+mixin slide(title, image, alt, country, photoAuthor, isActive)
+    - activeClass = isActive === true ? 'slides-container__slide_active' : ''
+
+    .slides-container__slide(class= activeClass)
+        .slides-container__text
+            h2.slides-container__title #{title}
+            .designers-info
+                .designers-info__image
+                    img(src='img/' + image + '.jpg' alt=alt)
+                .designers-info__descr
+                    .designers-info__country #{country}
+                    .designer-info__by photo by <br> #{photoAuthor}

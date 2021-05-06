@@ -2,4 +2,12 @@
 @import "general/fonts";
 @import "general/rem-calc";
 @import "general/mixins";
+@import "general/variables";
 @import "general/scaffoldings";
+
+@import "components/preloader/preloader";
+@import "blocks/header/header";
+@import "blocks/nav/nav";
+@import "blocks/slides/slides";
+@import "blocks/designers/designers";
+@import "blocks/shapes/shapes";

@@ -1,0 +1,23 @@
+.designer-info {
+    display: flex;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.designers-info__descr {
+    margin-left: 30px;
+}
+
+.designers-info__country {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.designer-info__by {
+    font-size: rem-calc(14);
+    line-height: rem-calc(18);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #727272;
+}

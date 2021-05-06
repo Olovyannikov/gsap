@@ -1,3 +1,29 @@
+include ./../mixins/_slide
+include ./../mixins/_bg
+include ./../mixins/_shapes
+
 h1.visually-hidden Designers studio Arita
 
-
+section.main-section.slide-1
+    .container
+        .slides-container
+            .wrapper
+                .slides-container__left
+                    .main-section__explore Explore Designers
+                    +slide('Kristie van Noort', 'img-1', 'Photo of Kristie van Noort', 'Netherlands', 'Kenta Hasegawa', true)
+                    +slide('Tomás Alonso','img-2','Photo of Tomás Alonso', 'Spain', 'Kenta Hasegawa', false)
+                    +slide('Stefan Diez', 'img-3', 'Photo of Stefan Diez', 'Germany', 'Kenta Hasegawa', false)
+                    +slide('Teruhiro Yanagihara', 'img-4', 'Photo of Teruhiro Yanagihara', 'Japan', false)
+                    +slide('Leon Ransmeier', 'img-5', 'Photo of Leon Ransmeier', 'New York, USA', false)
+                .slides-container__bg.slide-bg
+                    +bg(true, 1)
+                    +bg(false, 2)
+                    +bg(false, 3)
+                    +bg(false, 4)
+                    +bg(false, 5)
+    .shapes(aria-hidden='true')
+        +shapes(true, '#C9B39B', false)
+        +shapes(false, '#D6D8CF', true)
+        +shapes(false, '#D2E5DE', false)
+        +shapes(false, '#DFE5E7', false)
+        +shapes(false, '#D6D8CF', false)
