@@ -17,6 +17,9 @@
 
 .header__nav {
     margin-left: 16.5%;
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 
 .header__burger {

@@ -1,9 +1,9 @@
-mixin slide(title, image, alt, country, photoAuthor, isActive)
+mixin slide(title, image, alt, country, photoAuthor, isActive, isDark)
     - activeClass = isActive === true ? 'slides-container__slide_active' : ''
-
+    - darkClass = isDark === true ? 'slides-container__title_dark' : ''
     .slides-container__slide(class= activeClass)
         .slides-container__text
-            h2.slides-container__title #{title}
+            h2.slides-container__title(class=darkClass) #{title}
             .designers-info
                 .designers-info__image
                     img(src='img/' + image + '.jpg' alt=alt)

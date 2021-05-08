@@ -1,4 +1,4 @@
-export default () => {
+const mouseView = () => {
     const mouse = document.querySelector('.mouse');
     const slideBg = document.querySelector('.slide-bg');
     const links = document.querySelectorAll('a');
@@ -30,3 +30,5 @@ export default () => {
         })
     }
 }
+
+export {mouseView}

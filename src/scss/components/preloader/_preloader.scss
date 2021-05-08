@@ -36,6 +36,17 @@
     line-height: rem-calc(91);
     opacity: 0;
     transition: opacity .3s cubic-bezier(0.770, 0.125, 0.265, 1.040), transform .3s cubic-bezier(0.770, 0.125, 0.265, 1.040);
+    @media (max-width: 992px) {
+        width: 500px;
+        text-align: center;
+        font-size: rem-calc(55);
+        line-height: rem-calc(70);
+    }
+    @media (max-width: 576px) {
+        width: 90%;
+        font-size: rem-calc(35);
+        line-height: rem-calc(45);
+    }
 }
 
 .preloader__background {

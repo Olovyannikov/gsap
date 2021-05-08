@@ -9,6 +9,9 @@ html {
 *::before {
     box-sizing: inherit;
     cursor: none !important;
+    @media (max-width: 992px) {
+        cursor: auto !important;
+    }
 }
 
 body {
@@ -26,6 +29,7 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
     > svg {
         display: none;
     }
@@ -80,6 +84,7 @@ ul {
     border-radius: 50%;
     z-index: 99999;
     pointer-events: none;
+
     &::before, &::after {
         content: '';
         position: absolute;
@@ -91,12 +96,16 @@ ul {
         background: #d7d7d7;
         transition: opacity .3s ease-in-out;
     }
+
     &::after {
         width: 55px;
         height: 55px;
         background: #cdcdcd;
         z-index: -1;
         box-shadow: none;
+    }
+    @media (max-width: 992px) {
+        display: none;
     }
 }
 
@@ -130,6 +139,7 @@ ul {
         background-color: transparent;
         transition: .3s;
     }
+
     &::before {
         opacity: 0;
     }
@@ -163,6 +173,7 @@ ul {
     width: 37px;
     height: 37px;
     margin-right: 10px;
+
     svg {
         fill: white;
     }
@@ -176,6 +187,15 @@ ul {
     justify-content: center;
     flex-direction: column;
     transition: background-color 1s;
+
+    @media (max-height: 749.9px) {
+        min-height: 640px;
+    }
+    @media (max-width: 768px) {
+        min-height: 100vh;
+        height: auto;
+        padding-top: 100px;
+    }
 }
 
 .main-section__explore {
@@ -183,21 +203,28 @@ ul {
     text-transform: uppercase;
     opacity: 0;
     transform: translateY(100px);
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 
 .slide {
     &-1 {
         background-color: #b1b3b2;
     }
+
     &-2 {
         background-color: #f1f1f1;
     }
+
     &-3 {
         background-color: #b5b7b4;
     }
+
     &-4 {
         background-color: #b5b8c2;
     }
+
     &-5 {
         background-color: #c4c3c0;
     }
@@ -208,4 +235,10 @@ ul {
     z-index: 100;
     display: flex;
     justify-content: space-between;
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        justify-content: initial;
+    }
 }
+
+

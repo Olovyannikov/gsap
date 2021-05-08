@@ -6,15 +6,12 @@ bezier();
 swipedEvents();
 
 //modules
-import {default as settings} from './modules/settings';
-// import startAnimation from './modules/startAnimation';
-import {default as mouse} from './modules/mouse';
+import {mouseView as mouse} from './modules/mouse';
 import {bgSlides} from './modules/bgSlides';
 import {startAnimation} from "./modules/startAnimation";
-// import imagesSlides from './modules/imagesSlides';
-// import textSlides from './modules/textSlides';
-// import shapesSlides from './modules/settings';
-
+import {imagesSlides} from './modules/imagesSlides';
+import {textSlides} from './modules/textSlides';
+import {shapesSlides} from './modules/shapesSlides';
 
 const init = () => {
 
@@ -33,23 +30,27 @@ const init = () => {
     };
 
     const helperInput = document.querySelector('#helper-input');
-    settings();
     mouse();
 
     const showNextSlide = () => {
         bgSlides('down')
+        imagesSlides('down')
+        shapesSlides('down')
+        textSlides('down')
     }
 
     const showPrevSlide = () => {
         bgSlides('up')
+        imagesSlides('up')
+        shapesSlides('up')
+        textSlides('up')
     }
 
     if (window.innerWidth >= 768) {
         window.addEventListener('wheel', e => {
             let delta = -e.deltaY;
             if (delta > 0) {
-                if (helperInput.value === '1') {
-                    console.log('scroll up')
+                if (helperInput.value === 1) {
                     helperInput.value = 0;
                     showPrevSlide();
                     setTimeout(() => {
@@ -57,8 +58,7 @@ const init = () => {
                     }, 1500)
                 }
             } else {
-                if (helperInput.value === '1') {
-                    console.log('scroll down')
+                if (helperInput.value === 1) {
                     helperInput.value = 0;
                     showNextSlide();
                     setTimeout(() => {

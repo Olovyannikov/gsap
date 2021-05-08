@@ -1,5 +1,5 @@
-mixin bg(isCurrent, dataBg)
+mixin bg(isCurrent, dataBg, isIndex)
     - currentSlide = isCurrent === true ? 'slide-bg__inner_current' : ''
-
-    .slide-bg__inner(class=currentSlide)
+    -index = isIndex === true ? 'index' : ''
+    .slide-bg__inner(class=currentSlide class=index)
         a(href='#' data-bg='img/' + dataBg + '.jpg').slide-bg__link
