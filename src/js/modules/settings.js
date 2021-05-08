@@ -4,9 +4,6 @@ import gsap from "gsap";
 export default () => {
     const imageSlides = document.querySelectorAll('.slide-bg__inner');
     const shapeSlides = document.querySelectorAll('.shapes__item');
-    const mouse = document.querySelector('.mouse');
-    const slideBg = document.querySelector('.slide-bg');
-    const links = document.querySelectorAll('a');
     const easing = bezier(0.770, 0.125, 0.265, 1.040);
 
     const startComplete = () => {

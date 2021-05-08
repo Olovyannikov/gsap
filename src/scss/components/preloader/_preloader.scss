@@ -10,7 +10,6 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    display: none;
 }
 
 .preloader__back {
@@ -30,6 +29,7 @@
     margin: 0;
     position: absolute;
     @include center;
+    transform: translate(-50%, -20%);
     font-family: $font-alt;
     font-weight: 300;
     font-size: rem-calc(72);
@@ -43,7 +43,6 @@
     @include center;
     width: 330px;
     height: 220px;
-    background: #fff;
     z-index: -1;
     &::before {
         content: '';
@@ -67,3 +66,44 @@
 }
 
 /* Preloading animation */
+
+.preloader-animation {
+    .preloader__back {
+        opacity: 0.15;
+    }
+    .preloader__forward {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    .preloader__background {
+        &::before {
+            transition-delay: .5s;
+            width: 330px;
+        }
+    }
+}
+
+.preloader-hidden {
+    .preloader__background {
+        &::before {
+            width: 0;
+        }
+    }
+    .preloader__back {
+        opacity: 0;
+        transition: opacity .3s cubic-bezier(0.770, 0.125, 0.265, 1.040), transform .3s cubic-bezier(0.770, 0.125, 0.265, 1.040);
+
+    }
+    .preloader__forward {
+        opacity: 0;
+        transition-delay: .5s;
+        transition: opacity .3s ease-in-out;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.preloader-none {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
