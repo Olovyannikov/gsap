@@ -50,7 +50,7 @@ const init = () => {
         window.addEventListener('wheel', e => {
             let delta = -e.deltaY;
             if (delta > 0) {
-                if (helperInput.value === 1) {
+                if (helperInput.value == '1' || helperInput.value === 1) {
                     helperInput.value = 0;
                     showPrevSlide();
                     setTimeout(() => {
@@ -58,7 +58,7 @@ const init = () => {
                     }, 1500)
                 }
             } else {
-                if (helperInput.value === 1) {
+                if (helperInput.value == '1' || helperInput.value === 1) {
                     helperInput.value = 0;
                     showNextSlide();
                     setTimeout(() => {
